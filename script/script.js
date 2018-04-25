@@ -441,3 +441,74 @@ mike.calculateAge();
 
 // Lecture: DOM and DOM manipulation
 
+
+
+// Objects and prototypes
+
+
+
+// var john = {
+// 	name: 'John',
+// 	yearOfBirth: 1987,
+// 	job: 'teacher'
+// };
+
+// var Person = function(name, yearOfBirth, job) {
+// 	this.name = name;
+// 	this.yearOfBirth = yearOfBirth;
+// 	this.job = job;	
+// }
+
+// Person.prototype.calculateAge = function() {
+// 	console.log(2016 - this.yearOfBirth);
+// }
+
+
+
+// var john = new Person('John', 1987, 'Teacher'); 
+// var jane = new Person('Jane', 1948, 'retired');
+// var mark = new Person('Mark', 1997, 'designer');
+
+
+
+// john.calculateAge();
+// jane.calculateAge();
+// mark.calculateAge();
+
+
+
+// testing prototype
+
+var jane = {
+	name: 'Jane',
+	lastName: 'Smith',
+	age: 33,
+	job: 'Developer'
+}
+
+var Person = function(name, lastName, age, job) {
+	this.name = name;
+	this.lastName = lastName;
+	this.age = age;
+	this.job = job;
+};
+
+
+Person.prototype.printName = function() {
+	console.log(this.name + ' ' + this.lastName + ' ' + this.age + ' ' + this.job);
+}
+
+Person.prototype.city = 'Kiev';
+
+var jane = new Person('Jahn', 'Koroh', 34, 'Teacher');
+var mike = new Person('Mike', 'Koroh', 37, 'Driver');
+
+
+
+jane.printName();
+mike.printName();
+
+console.log(jane.city);
+console.log(mike.city);
+
+
